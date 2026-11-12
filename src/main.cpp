@@ -1,19 +1,27 @@
 // Soma de dois números;
 #include <iostream>
 
+using std::cout;
+using std::cin;
+
 int main() {
   int primeiroNumero;
   int segundoNumero;
 
-  std::cout << "Olá, o programa ira somar dois números\n\n";
+  cout << "Olá, o programa ira somar dois números\n\n";
 
-  std::cout << "Digite o primeiro número > ";
-  std::cin >> primeiroNumero;
+  cout << "Digite o primeiro número > ";
+  cin >> primeiroNumero;
 
-  std::cout << "Digite o segundo número > ";
-  std::cin >> segundoNumero;
+  cout << "Digite o segundo número > ";
+  cin >> segundoNumero;
 
-  std::cout << '\n' << "Resutado: " << primeiroNumero << " + " << segundoNumero << " = " << primeiroNumero + segundoNumero << '\n' << std::endl;
+  if(primeiroNumero == segundoNumero) {
+    cout << "Os dois números não podem ser iguais" << std::endl;
+    return 0;
+  }
+
+  cout << '\n' << "Resutado: " << primeiroNumero << " + " << segundoNumero << " = " << primeiroNumero + segundoNumero << std::endl;
 
   return 0;
 }
