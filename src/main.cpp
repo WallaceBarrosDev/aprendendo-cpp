@@ -1,12 +1,8 @@
-#include "UserInterface.h"
-#include <iostream>
+#include "Time.h"
 
-template < typename T >
-T soma(T a, T b) {
-  return a + b;
-}
-
-int main() {
-  std::cout << "10 + 20 = " << soma(10, 20) << std::endl;
+int main(void) {
+  Time t(18, 06, 34);
+  t.printUniveral();
+  t.printStrandat();
   return 0;
 }
