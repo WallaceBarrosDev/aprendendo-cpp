@@ -6,14 +6,19 @@ public:
   Time(int = 0, int = 0, int = 0);
   
   void setTime(int, int, int);
-  void setHours(int);
-  void setMinuts(int);
-  void setSeconds(int);
+  void setHour(int);
+  void setMinut(int);
+  void setSecond(int);
 
-  void printUniveral(void);
-  void printStrandat(void);
+  int getHour(void) const;
+  int getMinut(void) const;
+  int getSecond(void) const;
+
+  void printUniveral(void) const;
+  void printStrandat(void) const;
 private:
-  int hours, minuts, seconds;
+  int hour, minut, second;
+  const int id;
 };
 
 #endif

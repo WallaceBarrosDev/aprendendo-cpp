@@ -8,38 +8,42 @@ using std::setfill;
 
 #include "Time.h"
 
-Time::Time(int hours, int minuts, int seconds) {
-  this->setTime(hours, minuts, seconds);
+Time::Time(int hour, int minut, int second)
+  : hour(hour), minut(minut), second(second), id(20) {}
+
+
+void Time::setTime(int hour, int minut, int second) {
+  this->setHour(hour);
+  this->setMinut(minut);
+  this->setSecond(second);
 }
 
-void Time::setTime(int hours, int minuts, int seconds) {
-  this->setHours(hours);
-  this->setMinuts(minuts);
-  this->setSeconds(seconds);
+void Time::setHour(int hour) {
+  this->hour = (hour > 0 && hour < 24) ? hour : 0;
 }
 
-void Time::setHours(int hours) {
-  this->hours = (hours > 0 && hours < 24) ? hours : 0;
+void Time::setMinut(int minut) {
+  this->minut = (minut > 0 && minut < 60) ? minut : 0;
 }
 
-void Time::setMinuts(int minuts) {
-  this->minuts = (minuts > 0 && minuts < 60) ? minuts : 0;
+void Time::setSecond(int second) {
+  this->second = (second > 0 && second < 60) ? second : 0;
 }
 
-void Time::setSeconds(int seconds) { 
-  this->seconds = (seconds > 0 && seconds < 60) ? seconds : 0;
-}
+int Time::getHour() const { return hour; }
+int Time::getMinut() const { return minut; }
+int Time::getSecond() const { return second; }
 
-void Time::printUniveral(void) {
+void Time::printUniveral(void) const {
   cout << "horas: " << setfill('0')
-    << setw(2) << hours << ":"
-    << setw(2) << minuts << ":"
-    << setw(2) << seconds << endl;
+    << setw(2) << hour << ":"
+    << setw(2) << minut << ":"
+    << setw(2) << second << endl;
 }
 
-void Time::printStrandat(void) {
+void Time::printStrandat(void) const {
   cout << "horas (formatado): " << setfill('0') 
-    << setw(2) << ((hours == 0 || hours == 12) ? 12 : hours % 12) << ":"
-    << setw(2) << minuts << ":"
-    << setw(2) << seconds << (hours < 12 ? " AM" : " PM") << endl;
+    << setw(2) << ((hour == 0 || hour == 12) ? 12 : hour % 12) << ":"
+    << setw(2) << minut << ":"
+    << setw(2) << second << (hour < 12 ? " AM" : " PM") << endl;
 }
