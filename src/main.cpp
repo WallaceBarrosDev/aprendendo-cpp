@@ -1,14 +1,18 @@
 // #include "Time.h"
-#include "Employee.h"
+// #include "Employee.h"
+
+#include "Count.h"
+
+void setValue(Count &count, int value) {
+  count.value = value;
+}
 
 int main(void) {
-  Date birth(02, 15, 2003);
-  Date hire(11, 22, 2023);
+  Count count;
+  count.print();
 
-  Employee employee("Wallace", "Barros", birth, hire);
-  employee.print();
-
-  Date invalideDate(22, 300, 1000);
+  setValue(count, 20);
+  count.print();
 
   return 0;
 }
