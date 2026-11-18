@@ -3,7 +3,7 @@
 
 class Count {
 public:
-  void friend setValue(Count &count, int value);
+  void friend increment(Count &count);
 
   Count(int value = 0);
 

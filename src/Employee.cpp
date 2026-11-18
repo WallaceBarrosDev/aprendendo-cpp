@@ -2,10 +2,15 @@
 #include <iostream>
 using namespace std;
 
+Count Employee::count;
+
+void increment(Count &count) { count.value ++; }
+
+void Employee::printCount(void) { Employee::count.print(); }
+
 Employee::Employee(const char * const firstName, const char * const lastName, const Date &birthDate, const Date &hireDate):
-  birthDate(birthDate), hireDate(hireDate) {
-    this->firstName = firstName;
-    this->lastName = lastName;
+  firstName(firstName), lastName(lastName), birthDate(birthDate), hireDate(hireDate) {
+    increment(Employee::count);
 }
 
 void Employee::print() const {
