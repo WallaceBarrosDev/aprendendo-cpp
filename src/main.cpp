@@ -1,21 +1,17 @@
 // #include "Time.h"
-#include "Employee.h"
+//#include "Employee.h"
 //#include "Count.h"
 
-int main(void) {
-  Date birfth(2, 15, 2003);
-  Date hire(11, 22, 2023);
-  
-  Employee::printCount();
-  Employee *employee1 = new Employee("Wallace", "Barros", birfth, hire);
-  Employee::printCount();
-  Employee *employee2 = new Employee("Ana", "Julia", birfth, hire);
-  Employee::printCount();
+#include "Aluno.h"
+#include <iostream>
 
-  delete employee1;
-  employee1 = 0;
-  delete employee2;
-  employee2 = 0;
+int main(void) {
+  Aluno *aluno = new Aluno("Wallace", 23, 20253892, "MAC");
+
+  std::cout << "Nome do aluno: " << aluno->getNome() << endl;
+
+  delete aluno;
+  aluno = 0;
 
   return 0;
 }
